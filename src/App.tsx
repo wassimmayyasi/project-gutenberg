@@ -20,7 +20,7 @@ function App() {
             // Fetch first graph data
             const API_URL = import.meta.env.VITE_API_URL;
             const res = await fetch(`${API_URL}/get_book_analysis?book_id=${values.bookId}`)
-            if (!res.ok) throw new Error('Failed to load graph 1 data')
+            if (!res.ok) throw new Error('Something went wrong, you can try again or try a different book')
             const data = await res.json()
             const result = data.result
             setBookData({
